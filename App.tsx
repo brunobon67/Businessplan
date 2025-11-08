@@ -1,4 +1,3 @@
-<script src="https://cdn.tailwindcss.com"></script>
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BusinessPlanForm } from './components/BusinessPlanForm';

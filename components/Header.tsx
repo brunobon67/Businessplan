@@ -1,4 +1,3 @@
-<script src="https://cdn.tailwindcss.com"></script>
 import React from 'react';
 import { Button } from './ui/Button';
 
