@@ -1,0 +1,5 @@
+{
+  "name": "Business Plan",
+  "description": "An application to help users build a business plan by inputting variables, costs, and potential revenues. It calculates margins, profits/losses, and uses AI to suggest the best options to take.",
+  "requestFramePermissions": []
+}

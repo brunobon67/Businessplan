@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create your Business plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      @keyframes highlight-fade {
+        0% { 
+          background-color: rgba(59, 130, 246, 0.15); 
+          border-color: rgba(59, 130, 246, 0.4);
+        }
+        100% { 
+          background-color: transparent; 
+          border-color: inherit; 
+        }
+      }
+      .new-item-highlight {
+        animation: highlight-fade 2s ease-out forwards;
+      }
+
+      /*
+        Hide the print summary wrapper from the screen view.
+        The new JavaScript logic will grab its content and print it in a new window.
+      */
+      #print-summary-wrapper {
+        display: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 dark:bg-gray-900">
+    <div id="root"></div>
+    <div id="print-summary-wrapper"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
