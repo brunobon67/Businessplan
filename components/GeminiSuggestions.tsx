@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Card } from './ui/Card';
+import { Card } from './ui/Card.tsx';
 
 interface GeminiSuggestionsProps {
   suggestions: string;

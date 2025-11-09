@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Button } from './ui/Button';
-import { Card } from './ui/Card';
-import { Input } from './ui/Input';
-import { CompanyDetails } from '../types';
+import { Button } from './ui/Button.tsx';
+import { Card } from './ui/Card.tsx';
+import { Input } from './ui/Input.tsx';
+import { CompanyDetails } from '../types.ts';
 
 interface AuthModalProps {
   onClose: () => void;
