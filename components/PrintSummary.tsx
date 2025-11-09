@@ -1,5 +1,5 @@
 import React from 'react';
-import { BusinessPlan, CompanyDetails, FinancialSummaryData } from '../types';
+import { BusinessPlan, CompanyDetails, FinancialSummaryData } from '../types.ts';
 
 interface PrintSummaryProps {
   plan: BusinessPlan | null;

@@ -1,4 +1,4 @@
-import { YearlyFinancials, FinancialSummaryData } from '../types';
+import { YearlyFinancials, FinancialSummaryData } from '../types.ts';
 
 const calculateTotalRevenue = (year: YearlyFinancials): number => {
   if (year.consultingDetails) {

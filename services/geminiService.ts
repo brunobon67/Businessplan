@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { BusinessPlan, FinancialSummaryData, YearlyFinancials } from '../types';
+import { BusinessPlan, FinancialSummaryData, YearlyFinancials } from '../types.ts';
 
 const formatCurrency = (amount: number) => {
   return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);

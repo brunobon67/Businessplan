@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card } from './ui/Card';
-import { FinancialSummaryData } from '../types';
+import { Card } from './ui/Card.tsx';
+import { FinancialSummaryData } from '../types.ts';
 
 interface FinancialSummaryProps {
   summary: FinancialSummaryData;

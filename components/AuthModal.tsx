@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Button } from './ui/Button';
-import { Card } from './ui/Card';
-import { Input } from './ui/Input';
-import { CompanyDetails } from '../types';
+import { Button } from './ui/Button.tsx';
+import { Card } from './ui/Card.tsx';
+import { Input } from './ui/Input.tsx';
+import { CompanyDetails } from '../types.ts';
 
 interface AuthModalProps {
   onClose: () => void;
@@ -161,7 +161,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onLoginSuccess })
           {error && <p className="text-red-500 text-sm text-center pt-2">{error}</p>}
           <Button type="submit" className="w-full !py-3">
             {isLoginView ? 'Login' : 'Create Account & Print'}
-          </button>
+          </Button>
         </form>
 
         <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">

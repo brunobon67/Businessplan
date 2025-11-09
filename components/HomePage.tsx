@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Button } from './ui/Button';
-import { BusinessType } from '../types';
-import { Card } from './ui/Card';
-import { CustomSelect, SelectOption } from './ui/CustomSelect';
+import { Button } from './ui/Button.tsx';
+import { BusinessType } from '../types.ts';
+import { Card } from './ui/Card.tsx';
+import { CustomSelect, SelectOption } from './ui/CustomSelect.tsx';
 
 interface HomePageProps {
   onSelectBusinessType: (type: BusinessType) => void;
