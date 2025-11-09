@@ -75,26 +75,39 @@ export const BusinessPlanForm: React.FC<BusinessPlanFormProps> = ({ plan, yearDa
   ) => {
     setPlan(prevPlan => {
       if (!prevPlan) return null;
-      let newItem: RevenueStream | CostItem;
       const id = `${listName}-${Date.now()}`;
-
-      if (listName === 'revenueStreams') {
-        if (businessType === 'consulting') {
-          newItem =
-            type === 'billable'
-              ? { id, name: 'New Billable Service', hourlyRate: 0, billablePercentage: 0 }
-              : { id, name: 'New Product/Service', pricePerUnit: 0, unitsPerYear: 0 };
-        } else {
-          newItem = { id, name: '', pricePerUnit: 0, unitsPerYear: 0 };
-        }
-      } else {
-        newItem = { id, name: '', amount: 0 };
-      }
       setHighlightedItemId(id);
       
       const newYears = [...prevPlan.years];
       const currentYear = { ...newYears[yearIndex] };
-      currentYear[listName] = [...(currentYear[listName] as any), newItem];
+
+      // FIX: Replaced generic item adding logic with a type-safe switch statement to resolve type errors.
+      switch (listName) {
+        case 'revenueStreams': {
+          let newItem: RevenueStream;
+          if (businessType === 'consulting') {
+            newItem =
+              type === 'billable'
+                ? { id, name: 'New Billable Service', hourlyRate: 0, billablePercentage: 0 }
+                : { id, name: 'New Product/Service', pricePerUnit: 0, unitsPerYear: 0 };
+          } else {
+            newItem = { id, name: '', pricePerUnit: 0, unitsPerYear: 0 };
+          }
+          currentYear.revenueStreams = [...currentYear.revenueStreams, newItem];
+          break;
+        }
+        case 'fixedCosts': {
+          const newItem: CostItem = { id, name: '', amount: 0 };
+          currentYear.fixedCosts = [...currentYear.fixedCosts, newItem];
+          break;
+        }
+        case 'variableCosts': {
+          const newItem: CostItem = { id, name: '', amount: 0 };
+          currentYear.variableCosts = [...currentYear.variableCosts, newItem];
+          break;
+        }
+      }
+      
       newYears[yearIndex] = currentYear;
       
       return { ...prevPlan, years: newYears };
