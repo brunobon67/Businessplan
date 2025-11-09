@@ -114,19 +114,36 @@ export const BusinessPlanForm: React.FC<BusinessPlanFormProps> = ({ plan, yearDa
     });
   };
 
+  // FIX: Used a switch statement for type-safe removal of items from lists. This avoids assigning a general array type to a more specific one, which was causing a TypeScript error.
   const handleRemoveItem = (
     listName: 'revenueStreams' | 'fixedCosts' | 'variableCosts',
-    itemIndex: number,
+    itemIndex: number
   ) => {
-    setPlan(prevPlan => {
+    setPlan((prevPlan) => {
       if (!prevPlan) return null;
       const newYears = [...prevPlan.years];
       const currentYear = { ...newYears[yearIndex] };
-      const list = currentYear[listName] as (RevenueStream | CostItem)[];
-      const newList = list.filter((_, i) => i !== itemIndex);
-      currentYear[listName] = newList;
+
+      switch (listName) {
+        case 'revenueStreams':
+          currentYear.revenueStreams = currentYear.revenueStreams.filter(
+            (_, i) => i !== itemIndex
+          );
+          break;
+        case 'fixedCosts':
+          currentYear.fixedCosts = currentYear.fixedCosts.filter(
+            (_, i) => i !== itemIndex
+          );
+          break;
+        case 'variableCosts':
+          currentYear.variableCosts = currentYear.variableCosts.filter(
+            (_, i) => i !== itemIndex
+          );
+          break;
+      }
+
       newYears[yearIndex] = currentYear;
-      
+
       return { ...prevPlan, years: newYears };
     });
   };
