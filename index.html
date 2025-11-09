@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create your Business plan</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,7 +52,25 @@
   <body class="bg-gray-50 dark:bg-gray-900">
     <div id="root"></div>
     <div id="print-summary-wrapper"></div>
-    <!-- Change script type to 'text/babel' and point to the .tsx source file -->
-    <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
+    <!-- Inlined the main script to bypass potential 404 errors on index.tsx -->
+    <script type="text/babel" data-presets="react,typescript" data-type="module">
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
+      import App from './App.tsx';
+
+      const rootElement = document.getElementById('root');
+
+      if (!rootElement) {
+        throw new Error("Could not find root element to mount to");
+      }
+
+      const root = ReactDOM.createRoot(rootElement);
+
+      root.render(
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      );
+    </script>
   </body>
 </html>
