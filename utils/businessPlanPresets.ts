@@ -1,4 +1,4 @@
-import { BusinessPlan, BusinessType } from '../types.ts';
+import { BusinessPlan, BusinessType } from '../types';
 
 const emptyYear = {
   revenueStreams: [],

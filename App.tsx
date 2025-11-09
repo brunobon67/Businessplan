@@ -1,17 +1,17 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { BusinessPlanForm } from './components/BusinessPlanForm.tsx';
-import { FinancialSummary } from './components/FinancialSummary.tsx';
-import { GeminiSuggestions } from './components/GeminiSuggestions.tsx';
-import { Header } from './components/Header.tsx';
-import { Button } from './components/ui/Button.tsx';
-import { BusinessPlan, BusinessType, CompanyDetails } from './types.ts';
-import { calculateFinancials } from './utils/financialCalculations.ts';
-import { generateBusinessPlanAnalysis } from './services/geminiService.ts';
-import { HomePage } from './components/HomePage.tsx';
-import { businessPlanPresets } from './utils/businessPlanPresets.ts';
-import { PrintSummary } from './components/PrintSummary.tsx';
-import { AuthModal } from './components/AuthModal.tsx';
+import { BusinessPlanForm } from './components/BusinessPlanForm';
+import { FinancialSummary } from './components/FinancialSummary';
+import { GeminiSuggestions } from './components/GeminiSuggestions';
+import { Header } from './components/Header';
+import { Button } from './components/ui/Button';
+import { BusinessPlan, BusinessType, CompanyDetails } from './types';
+import { calculateFinancials } from './utils/financialCalculations';
+import { generateBusinessPlanAnalysis } from './services/geminiService';
+import { HomePage } from './components/HomePage';
+import { businessPlanPresets } from './utils/businessPlanPresets';
+import { PrintSummary } from './components/PrintSummary';
+import { AuthModal } from './components/AuthModal';
 
 const App: React.FC = () => {
   const [plan, setPlan] = useState<BusinessPlan | null>(null);

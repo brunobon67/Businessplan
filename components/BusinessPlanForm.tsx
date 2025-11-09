@@ -1,9 +1,9 @@
 import React, { useMemo, useState, useEffect } from 'react';
-import { BusinessPlan, BusinessType, CostItem, RevenueStream, YearlyFinancials } from '../types.ts';
-import { Button } from './ui/Button.tsx';
-import { Card } from './ui/Card.tsx';
-import { Input } from './ui/Input.tsx';
-import { calculateTotalUnits } from '../utils/financialCalculations.ts';
+import { BusinessPlan, BusinessType, CostItem, RevenueStream, YearlyFinancials } from '../types';
+import { Button } from './ui/Button';
+import { Card } from './ui/Card';
+import { Input } from './ui/Input';
+import { calculateTotalUnits } from '../utils/financialCalculations';
 
 interface BusinessPlanFormProps {
   plan: BusinessPlan;
